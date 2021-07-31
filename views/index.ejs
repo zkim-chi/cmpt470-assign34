@@ -1,11 +1,32 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+<html lang="en">
+<head>
+ <% include frame/head %> 
+</head>
+<body>
+<% include frame/nav %>
+<div class="container-fluid bg-3 text-center">    
+  <div class="row">
+    <div class="col-sm-6">
+      <h1>Welcome to Rectangles!</h1>
+      <br><br>
+      <h4>Want to make and see some rectangles?</h4>
+      <a class="btn btn-info" href="/view-rectangles" role="button">Click Here</a>
+    </div>
+    <div class="col-sm-6" style="padding-top:20px;"> 
+      <h2>Did you know...</h2>
+      <br>
+      <h4>The opposite sides of a rectangle are equal and parallel.</h4>
+      <br>
+      <h4>The diagonals are equal and bisect each other.</h4>
+      <br>
+      <h4>The intersection of the diagonals is the circumcentre. <br>That is you can draw a circle with that as centre to pass through the four corners.</h4>
+      <br>
+      <h4>Revolve a rectangle about the shorter side as the axis of rotation and <br>you get a cylinder whose diameter is twice the length of the rectangle and <br>the height same as the width of the rectangle.</h4>
+    </div>
+  </div>
+</div>
+</body>
+<% include frame/script %>
 </html>
+

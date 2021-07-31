@@ -6,3 +6,50 @@ body {
 a {
   color: #00B7FF;
 }
+
+/* Landing Page CSS */
+.bg-3 { 
+  background-color: #ffffff;
+  color: #555555;
+}
+.container-fluid {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+/* Nav Bar CSS */
+.navbar {
+  background-color: rgb(165, 238, 248);
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
+}
+
+.navbar-default .navbar-brand {
+  color: rgb(255, 255, 255);
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: rgb(255, 255, 255);
+}
+
+.navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.active>a:focus, .navbar-default .navbar-nav>.active>a:hover{
+  background-color: transparent !important;
+}
+
+.navbar-nav  li a:hover {
+  color: #2e89bd !important;
+}
+.active>a {
+  color: #1b416d !important;
+}
+
+/* get-rectangle CSS */
+.get-rectangle {
+  border-collapse:separate;
+  border-spacing:0 15px;
+}

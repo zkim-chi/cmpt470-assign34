@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include frame/head %> 
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <% include frame/nav %> 
+    <div class="container" style="margin-top:20px;">
+      <a class="btn btn-primary" href="/view-rectangles" role="button">Back</a>
+      <br>
+      <br>
+      <h1 style="padding-top:0px;"><%= title %> ID: <%= rect_id %></h1> 
+      <table style="font-size:20px;" class="get-rectangle">
+        <br>
+        <% rectangles.forEach(function(r) {  %>
+          <tr> 
+            <td style="width:100px;"><strong>NAME:</strong></td>
+            <td><%= r.name %></td>
+          </tr>
+          <tr>
+            <td style="width:100px;"><strong>WIDTH:</strong></td>
+            <td><%= r.width %></td>
+          </tr>
+          <tr>
+            <td style="width:100px;"><strong>HEIGHT:</strong></td>
+            <td><%= r.height %></td>
+          </tr>
+          <tr>
+            <td style="width:100px;"><strong>COLOR:</strong></td>
+            <td style="color:<%= r.color %>;"><strong><%= r.color %></strong></td>
+          </tr>
+      <% }); %>
+      </table>
+    </div>
+  </body>
+  <% include frame/script %>
+</html>

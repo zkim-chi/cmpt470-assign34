@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include frame/head %> 
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <% include frame/nav %>
+    <div class="container">
+      <h1>Welcome to the <%= title %> page!</h1>
+      <h2>Add a Rectangle!! </h2>
+      <a class="btn btn-info" href='/add-rectangle' role="button">Add Rectangle</a>
+      <br><br>
+      <table>
+        <tr>
+          <th><h2>Rectangles in the database:</h2></th>
+        </tr>
+
+        <% rectangles.forEach(function(r) {  %>
+          <tr>
+            <td><a href='/get-rectangle/?id=<%= r.rect_id %>'><canvas id="<%= r.rect_id %>"></canvas></a><a href='/edit-rectangle/?id=<%= r.rect_id %> %>'><i style="font-size:24px" class="fa">&#xf044;</i></a></td>
+          
+            <script>
+              var id = "<%= r.rect_id %>"
+              var canvas = document.getElementById(id);
+              canvas.width = "<%= r.width %>";
+              canvas.height = "<%= r.height %>";
+              var ctx = canvas.getContext('2d');
+              ctx.fillStyle = "<%= r.color %>";
+              var w = "<%= r.width %>"; 
+              var h = "<%= r.height %>";
+              ctx.fillRect(0, 0, w, h);
+            </script>
+          </tr>
+          
+        <% }); %>
+      
+      </table>
+    </div>
+  </body>
+</html>

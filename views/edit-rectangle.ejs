@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <% include frame/head %> 
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  </head>
+  <body>
+    <% include frame/nav %> 
+    <div class="container" style="margin-top:20px;">
+      <a class="btn btn-primary" href="/view-rectangles" role="button">Back</a>
+      <br>
+      <br>
+      <h1 style="margin-top:20px; display: inline;"><%= title %> <%= rect_id %></h1> 
+        <a href='/delete-rectangle/?id=<%= rectangle.id %>'><i class="fa fa-trash-o" style="font-size:24px "></i></a>
+
+      <form action="/update-rectangle" method="POST">
+        <input hidden readonly type="text" id="rect_id" name="rect_id" value=<%=rect_id %>><br>
+
+        <label for="rect_name">Rename Rectangle:</label><br>
+        <input type="text" id="name" name="name" value="<%=name %>""><br><br>
+
+        <label for="rect_name">Change Width:</label><br>
+        <input type="number" min="1" id="width" name="width" value=<%=width %>><br><br>
+
+        <label for="rect_name">Change Height:</label><br>
+        <input type="number" min="1" id="height" name="height" value=<%=height %>><br><br>
+        
+        <label for="rect_name">Change Color:</label><br>
+        <input type="color" id="color" name="color" value="<%=color %>"><br><br>
+      
+        <input type="submit" class="btn btn-info" value="Update Rectangle">
+      </form> 
+    </div>
+  </body>
+  <% include frame/script %>
+</html>
